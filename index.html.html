@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Policyfy landing page</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#f4f8fe;
+overflow-x:hidden;
+color:#111;
+}
+
+/* =========================
+ROOT
+========================= */
+
+:root{
+--primary:#0057D9;
+--secondary:#0A1F44;
+--gradient:linear-gradient(135deg,#0057D9,#00A3FF);
+--shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* =========================
+TOP BAR
+========================= */
+
+.top-bar{
+width:100%;
+height:48px;
+background:#fff;
+display:flex;
+justify-content:flex-end;
+align-items:center;
+padding:0 8%;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+border-bottom:1px solid #eee;
+transition:.3s;
+}
+
+.top-bar-right{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.call-text{
+font-size:13px;
+font-weight:600;
+color:#333;
+}
+
+.top-bar-btn{
+background:#E53935;
+color:#fff;
+padding:8px 18px;
+border-radius:8px;
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+transition:.3s;
+}
+
+.top-bar-btn:hover{
+background:#c62828;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar{
+width:100%;
+padding:16px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:48px;
+left:0;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(10px);
+z-index:999;
+box-shadow:0 5px 15px rgba(0,0,0,0.03);
+transition:.3s;
+}
+
+.logo{
+display:flex;
+align-items:center;
+text-decoration:none;
+}
+
+.logo img{
+height:52px;
+object-fit:contain;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--primary);
+}
+
+/* =========================
+MENU
+========================= */
+
+.menu-btn{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
+
+.mobile-menu{
+position:fixed;
+top:0;
+right:-100%;
+width:280px;
+height:100vh;
+background:#fff;
+z-index:2000;
+padding:80px 30px;
+transition:.4s;
+box-shadow:-5px 0 20px rgba(0,0,0,0.08);
+}
+
+.mobile-menu.active{
+right:0;
+}
+
+.mobile-menu a{
+display:block;
+margin-bottom:25px;
+text-decoration:none;
+font-size:17px;
+font-weight:600;
+color:#333;
+}
+
+.close-btn{
+position:absolute;
+top:20px;
+right:25px;
+font-size:32px;
+cursor:pointer;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+min-height:100vh;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:60px;
+padding:180px 8% 90px;
+background:
+linear-gradient(rgba(255,255,255,.93),rgba(255,255,255,.94)),
+url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero-left h1{
+font-size:58px;
+line-height:1.2;
+font-weight:800;
+color:var(--secondary);
+margin-bottom:20px;
+}
+
+.hero-left h1 span{
+color:var(--primary);
+}
+
+.hero-left p{
+font-size:18px;
+line-height:1.8;
+color:#555;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:50px;
+font-size:15px;
+font-weight:600;
+text-decoration:none;
+display:inline-block;
+transition:.3s;
+}
+
+.btn-primary{
+background:var(--gradient);
+color:#fff;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-outline{
+border:2px solid var(--primary);
+color:var(--primary);
+}
+
+.btn-outline:hover{
+background:#e8f1ff;
+}
+
+/* =========================
+FORM
+========================= */
+
+.form-box{
+background:#fff;
+padding:40px;
+border-radius:25px;
+box-shadow:var(--shadow);
+}
+
+.form-box h2{
+font-size:34px;
+margin-bottom:10px;
+color:var(--secondary);
+}
+
+.form-box p{
+margin-bottom:25px;
+color:#666;
+font-size:14px;
+line-height:1.6;
+}
+
+.form-box input,
+.form-box select{
+width:100%;
+padding:16px;
+border:2px solid #E2E8F0;
+border-radius:12px;
+margin-bottom:18px;
+font-size:15px;
+outline:none;
+transition:.3s;
+}
+
+.form-box input:focus,
+.form-box select:focus{
+border-color:var(--primary);
+}
+
+.form-box button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:12px;
+background:var(--gradient);
+color:#fff;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.form-box button:hover{
+opacity:.95;
+}
+
+/* =========================
+STATUS BOX
+========================= */
+
+.lead-status,
+.verify-status{
+display:none;
+padding:14px;
+border-radius:12px;
+font-size:14px;
+font-weight:600;
+margin-bottom:18px;
+text-align:center;
+}
+
+.lead-status{
+background:#dbeafe;
+color:#0c4a6e;
+}
+
+.verify-status{
+background:#d1fae5;
+color:#065f46;
+}
+
+.otp-box{
+display:none;
+margin-top:10px;
+}
+
+.otp-note{
+font-size:13px;
+color:#666;
+margin-bottom:15px;
+line-height:1.6;
+}
+
+/* =========================
+TRUST
+========================= */
+
+.trust{
+padding:70px 8%;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+background:#fff;
+}
+
+.trust-card{
+background:#f8fbff;
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+}
+
+.trust-card:hover{
+transform:translateY(-5px);
+background:var(--secondary);
+color:#fff;
+}
+
+.trust-card h3{
+font-size:34px;
+color:var(--primary);
+margin-bottom:10px;
+}
+
+.trust-card:hover h3{
+color:#fff;
+}
+
+/* =========================
+BENEFITS
+========================= */
+
+.benefits{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:42px;
+color:var(--secondary);
+margin-bottom:12px;
+}
+
+.section-title p{
+color:#666;
+}
+
+.benefit-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.benefit-card{
+background:#fff;
+padding:35px;
+border-radius:22px;
+box-shadow:var(--shadow);
+transition:.3s;
+}
+
+.benefit-card:hover{
+transform:translateY(-8px);
+}
+
+.benefit-card img{
+width:60px;
+margin-bottom:20px;
+}
+
+.benefit-card h3{
+margin-bottom:12px;
+color:var(--secondary);
+}
+
+.benefit-card p{
+line-height:1.7;
+color:#555;
+}
+
+/* =========================
+CTA
+========================= */
+
+.cta{
+margin:80px 8%;
+padding:80px 40px;
+border-radius:30px;
+text-align:center;
+background:linear-gradient(135deg,#0057D9,#001B4D);
+color:#fff;
+}
+
+.cta h2{
+font-size:44px;
+margin-bottom:15px;
+}
+
+.cta p{
+font-size:18px;
+margin-bottom:30px;
+opacity:.9;
+}
+
+.cta .btn-primary{
+background:#fff;
+color:var(--primary);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+background:#0A1F44;
+padding:70px 8% 30px;
+color:#fff;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
+margin-bottom:40px;
+}
+
+.footer-logo img{
+height:55px;
+margin-bottom:20px;
+}
+
+.footer-links h3{
+margin-bottom:18px;
+}
+
+.footer-links a{
+display:block;
+margin-bottom:12px;
+color:#A0AEC0;
+text-decoration:none;
+transition:.3s;
+}
+
+.footer-links a:hover{
+color:#fff;
+}
+
+.bottom{
+border-top:1px solid rgba(255,255,255,.1);
+padding-top:20px;
+text-align:center;
+font-size:14px;
+color:#aaa;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:1024px){
+
+.top-bar{
+justify-content:center;
+padding:0 5%;
+}
+
+.navbar{
+padding:15px 5%;
+}
+
+.nav-links{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero{
+grid-template-columns:1fr;
+padding:150px 5% 60px;
+gap:35px;
+text-align:center;
+}
+
+.hero-right{
+order:-1;
+}
+
+.hero-left h1{
+font-size:42px;
+}
+
+.hero-left p{
+font-size:16px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.trust{
+grid-template-columns:1fr 1fr;
+padding:60px 5%;
+}
+
+.benefit-grid{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.cta{
+margin:60px 5%;
+padding:60px 25px;
+}
+
+.cta h2{
+font-size:34px;
+}
+
+.logo img{
+height:45px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-left h1{
+font-size:32px;
+}
+
+.trust{
+grid-template-columns:1fr;
+}
+
+.section-title h2{
+font-size:30px;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.btn{
+width:100%;
+}
+
+.top-bar{
+height:auto;
+padding:10px;
+}
+
+.call-text{
+font-size:12px;
+}
+
+.top-bar-btn{
+font-size:12px;
+padding:7px 15px;
+}
+
+.navbar{
+top:50px;
+}
+
+.form-box{
+padding:30px 20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+TOP BAR
+========================= -->
+
+<div class="top-bar">
+
+<div class="top-bar-right">
+
+<div class="call-text">
+📞 Call To Buy: <strong>1800-313-3211</strong>
+</div>
+
+<a href="#quote-form" class="top-bar-btn">
+Buy Now
+</a>
+
+</div>
+
+</div>
+
+<!-- =========================
+NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+<a href="#" class="logo">
+
+<!-- YOUR LOGO -->
+<img src="policyfy-logo.png" alt="Policyfy Logo">
+
+</a>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Plans</a>
+<a href="#">Benefits</a>
+<a href="#">Contact</a>
+</div>
+
+<div class="menu-btn" onclick="openMenu()">
+☰
+</div>
+
+</nav>
+
+<!-- =========================
+MOBILE MENU
+========================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+<div class="close-btn" onclick="closeMenu()">
+×
+</div>
+
+<a href="#">Home</a>
+<a href="#">Plans</a>
+<a href="#">Benefits</a>
+<a href="#">Contact</a>
+
+</div>
+
+<!-- =========================
+HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+Protect Your Family With
+<span>Smart Health Insurance</span>
+</h1>
+
+<p>
+Protection against unexpected and unplanned medical expenses caused by sudden hospitalization, with access to a wide cashless hospital network and flexible plans tailored for every family
+</p>
+
+<div class="hero-buttons">
+
+<a href="#quote-form" class="btn btn-primary">
+Get Quote
+</a>
+
+<a href="#" class="btn btn-outline">
+View Plans
+</a>
+
+</div>
+
+</div>
+
+<!-- =========================
+FORM
+========================= -->
+
+<div class="hero-right" id="quote-form">
+
+<div class="form-box">
+
+<h2>Explore Health Insurance</h2>
+
+<p>
+Protect Your Family with Smart Health Insurance in Just 5 Minutes.
+</p>
+
+<!-- LEAD SUCCESS -->
+
+<div class="lead-status" id="leadStatus">
+✅ Lead Submitted Successfully
+</div>
+
+<!-- VERIFIED SUCCESS -->
+
+<div class="verify-status" id="verifyStatus">
+✅ Phone Number Verified
+</div>
+
+<form id="leadForm">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input 
+type="tel" 
+id="phone" 
+placeholder="Phone Number" 
+maxlength="10"
+required
+> 
+<input type="text" id="city" placeholder="City" required>
+
+<button type="submit">
+Submit
+</button>
+
+</form>
+
+<!-- OTP BOX -->
+
+<div class="otp-box" id="otpBox">
+
+<div class="otp-note">
+Enter OTP sent to your mobile number.
+</div>
+
+<input type="text" id="otpInput" placeholder="Enter OTP">
+
+<button id="verifyBtn">
+Verify OTP
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+TRUST
+========================= -->
+
+<section class="trust">
+</section>
+
+<!-- =========================
+BENEFITS
+========================= -->
+
+<section class="benefits">
+
+<div class="section-title">
+
+<h2>Why Choose Policyfy?</h2>
+
+<p>
+Complete healthcare protection with advanced coverage benefits.
+</p>
+
+</div>
+
+<div class="benefit-grid">
+
+<div class="benefit-card">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" alt="Cashless">
+
+<h3>Cashless Treatment</h3>
+
+<p>
+Get treatment across thousands of network hospitals.
+</p>
+
+</div>
+
+<div class="benefit-card">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2936/2936758.png" alt="Tax">
+
+<h3>Tax Benefits</h3>
+
+<p>
+Save yearly tax with Section 80D medical insurance deductions.
+</p>
+
+</div>
+
+<div class="benefit-card">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3004/3004458.png" alt="Critical">
+
+<h3>Critical Illness</h3>
+
+<p>
+Get additional protection for major medical emergencies and surgeries.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+CTA
+========================= -->
+
+<section class="cta">
+
+<h2>
+Secure Your Family's Healthcare Future
+</h2>
+
+<p>
+Get insured today with smart health plans and instant support.
+</p>
+
+<a href="#quote-form" class="btn btn-primary">
+Get Started
+</a>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">
+
+<!-- FOOTER LOGO -->
+<img src="policyfy-logo.png" alt="Footer Logo">
+
+</div>
+
+<p>
+Your reliable healthcare insurance partner for secure and stress-free living.
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Quick Links</h3>
+
+<a href="#">Home</a>
+<a href="#">Plans</a>
+<a href="#">Benefits</a>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Support</h3>
+
+<a href="#">Help Desk</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms & Conditions</a>
+
+</div>
+
+</div>
+
+<div class="bottom">
+© 2025 Policyfy. All Rights Reserved.
+</div>
+
+</footer>
+
+<!-- =========================
+JAVASCRIPT
+========================= -->
+
+<script>
+
+/* =========================
+MOBILE MENU
+========================= */
+
+function openMenu(){
+document.getElementById("mobileMenu").classList.add("active");
+}
+
+function closeMenu(){
+document.getElementById("mobileMenu").classList.remove("active");
+}
+
+/* =========================
+FAKE OTP FOR DEMO
+========================= */
+
+/*
+IMPORTANT:
+
+Google Ads landing page ke liye
+real OTP use karne ke liye:
+
+✔ Firebase Auth
+✔ MSG91
+✔ Twilio
+✔ Fast2SMS
+
+backend connect karna padega.
+
+Abhi demo OTP:
+1234
+*/
+
+let generatedOTP = "1234";
+
+/* =========================
+FORM SUBMIT
+========================= */
+
+const leadForm = document.getElementById("leadForm");
+
+leadForm.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+/* FORM VALUES */
+
+const name = document.getElementById("name").value.trim();
+const phone = document.getElementById("phone").value.trim();
+const cover = document.getElementById("cover").value;
+const city = document.getElementById("city").value.trim();
+
+/* PHONE VALIDATION */
+
+if(phone.length !== 10 || isNaN(phone)){
+
+alert("Please enter valid 10 digit mobile number");
+
+return;
+
+}
+
+/* LEAD OBJECT */
+
+const leadData = {
+name:name,
+phone:phone,
+cover:cover,
+city:city
+};
+
+console.log("Lead Submitted:", leadData);
+
+/* =========================
+YOUR API HERE
+========================= */
+
+/*
+
+fetch("YOUR_API_URL",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify(leadData)
+
+})
+
+.then(response => response.json())
+
+.then(data => {
+
+console.log(data);
+
+})
+
+.catch(error => {
+
+console.log(error);
+
+});
+
+*/
+
+/* SHOW LEAD SUCCESS */
+
+document.getElementById("leadStatus").style.display = "block";
+
+/* SHOW OTP BOX */
+
+document.getElementById("otpBox").style.display = "block";
+
+/* DEMO ALERT */
+
+alert("Lead Submitted Successfully! Demo OTP: 1234");
+
+});
+
+/* =========================
+VERIFY OTP
+========================= */
+
+document.getElementById("verifyBtn").addEventListener("click", function(){
+
+const enteredOTP = document.getElementById("otpInput").value.trim();
+
+if(enteredOTP === generatedOTP){
+
+document.getElementById("verifyStatus").style.display = "block";
+
+document.getElementById("otpInput").disabled = true;
+
+this.disabled = true;
+
+this.innerHTML = "Verified ✅";
+
+this.style.background = "#16a34a";
+
+}else{
+
+alert("Invalid OTP");
+
+}
+
+});
+
+/* =========================
+NAVBAR SCROLL
+========================= */
+
+window.addEventListener("scroll", function(){
+
+if(window.scrollY > 50){
+
+document.querySelector(".top-bar").style.transform = "translateY(-100%)";
+
+document.querySelector(".navbar").style.top = "0";
+
+}else{
+
+document.querySelector(".top-bar").style.transform = "translateY(0)";
+
+document.querySelector(".navbar").style.top = "48px";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
