@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Policyfy landing page</title>
+<title>Policyfy New Landing Page For Google Ads</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -92,7 +92,7 @@ NAVBAR
 
 .navbar{
 width:100%;
-padding:16px 8%;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -106,6 +106,10 @@ box-shadow:0 5px 15px rgba(0,0,0,0.03);
 transition:.3s;
 }
 
+/* =========================
+BIG HEADER LOGO
+========================= */
+
 .logo{
 display:flex;
 align-items:center;
@@ -113,9 +117,15 @@ text-decoration:none;
 }
 
 .logo img{
-height:52px;
+height:85px;
+width:auto;
 object-fit:contain;
+transition:.3s;
 }
+
+/* =========================
+NAV LINKS
+========================= */
 
 .nav-links{
 display:flex;
@@ -187,7 +197,7 @@ display:grid;
 grid-template-columns:1fr 1fr;
 align-items:center;
 gap:60px;
-padding:180px 8% 90px;
+padding:220px 8% 90px;
 background:
 linear-gradient(rgba(255,255,255,.93),rgba(255,255,255,.94)),
 url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80');
@@ -272,8 +282,7 @@ font-size:14px;
 line-height:1.6;
 }
 
-.form-box input,
-.form-box select{
+.form-box input{
 width:100%;
 padding:16px;
 border:2px solid #E2E8F0;
@@ -284,8 +293,7 @@ outline:none;
 transition:.3s;
 }
 
-.form-box input:focus,
-.form-box select:focus{
+.form-box input:focus{
 border-color:var(--primary);
 }
 
@@ -481,9 +489,16 @@ gap:40px;
 margin-bottom:40px;
 }
 
+/* =========================
+BIG FOOTER LOGO
+========================= */
+
 .footer-logo img{
-height:55px;
+height:100px;
+width:auto;
+object-fit:contain;
 margin-bottom:20px;
+transition:.3s;
 }
 
 .footer-links h3{
@@ -522,7 +537,7 @@ padding:0 5%;
 }
 
 .navbar{
-padding:15px 5%;
+padding:18px 5%;
 }
 
 .nav-links{
@@ -535,7 +550,7 @@ display:block;
 
 .hero{
 grid-template-columns:1fr;
-padding:150px 5% 60px;
+padding:200px 5% 60px;
 gap:35px;
 text-align:center;
 }
@@ -579,7 +594,11 @@ font-size:34px;
 }
 
 .logo img{
-height:45px;
+height:70px;
+}
+
+.footer-logo img{
+height:80px;
 }
 
 }
@@ -628,6 +647,14 @@ top:50px;
 padding:30px 20px;
 }
 
+.logo img{
+height:58px;
+}
+
+.footer-logo img{
+height:70px;
+}
+
 }
 
 </style>
@@ -635,9 +662,7 @@ padding:30px 20px;
 
 <body>
 
-<!-- =========================
-TOP BAR
-========================= -->
+<!-- TOP BAR -->
 
 <div class="top-bar">
 
@@ -655,16 +680,14 @@ Buy Now
 
 </div>
 
-<!-- =========================
-NAVBAR
-========================= -->
+<!-- NAVBAR -->
 
 <nav class="navbar">
 
 <a href="#" class="logo">
 
-<!-- YOUR LOGO -->
-<img src="policyfy-logo.png" alt="Policyfy Logo">
+<!-- HEADER LOGO -->
+<img src="policyfy-logo.png" alt="Official Policyfy Logo">
 
 </a>
 
@@ -681,9 +704,7 @@ NAVBAR
 
 </nav>
 
-<!-- =========================
-MOBILE MENU
-========================= -->
+<!-- MOBILE MENU -->
 
 <div class="mobile-menu" id="mobileMenu">
 
@@ -698,9 +719,7 @@ MOBILE MENU
 
 </div>
 
-<!-- =========================
-HERO
-========================= -->
+<!-- HERO SECTION -->
 
 <section class="hero">
 
@@ -712,7 +731,7 @@ Protect Your Family With
 </h1>
 
 <p>
-Protection against unexpected and unplanned medical expenses caused by sudden hospitalization, with access to a wide cashless hospital network and flexible plans tailored for every family
+Protection against unexpected medical expenses with access to a wide cashless hospital network and affordable plans for every family.
 </p>
 
 <div class="hero-buttons">
@@ -729,9 +748,7 @@ View Plans
 
 </div>
 
-<!-- =========================
-FORM
-========================= -->
+<!-- FORM -->
 
 <div class="hero-right" id="quote-form">
 
@@ -743,13 +760,9 @@ FORM
 Protect Your Family with Smart Health Insurance in Just 5 Minutes.
 </p>
 
-<!-- LEAD SUCCESS -->
-
 <div class="lead-status" id="leadStatus">
 ✅ Lead Submitted Successfully
 </div>
-
-<!-- VERIFIED SUCCESS -->
 
 <div class="verify-status" id="verifyStatus">
 ✅ Phone Number Verified
@@ -765,7 +778,8 @@ id="phone"
 placeholder="Phone Number" 
 maxlength="10"
 required
-> 
+>
+
 <input type="text" id="city" placeholder="City" required>
 
 <button type="submit">
@@ -773,8 +787,6 @@ Submit
 </button>
 
 </form>
-
-<!-- OTP BOX -->
 
 <div class="otp-box" id="otpBox">
 
@@ -796,16 +808,7 @@ Verify OTP
 
 </section>
 
-<!-- =========================
-TRUST
-========================= -->
-
-<section class="trust">
-</section>
-
-<!-- =========================
-BENEFITS
-========================= -->
+<!-- BENEFITS -->
 
 <section class="benefits">
 
@@ -814,7 +817,7 @@ BENEFITS
 <h2>Why Choose Policyfy?</h2>
 
 <p>
-Complete healthcare protection with advanced coverage benefits.
+Quick policy comparison from top insurers with dedicated support and reliable claim assistance.
 </p>
 
 </div>
@@ -825,34 +828,34 @@ Complete healthcare protection with advanced coverage benefits.
 
 <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" alt="Cashless">
 
-<h3>Cashless Treatment</h3>
+<h3>Trusted Insurance Experts</h3>
 
 <p>
-Get treatment across thousands of network hospitals.
+Get guidance from experienced insurance advisors.
 </p>
 
 </div>
 
 <div class="benefit-card">
 
-<img src="https://cdn-icons-png.flaticon.com/512/2936/2936758.png" alt="Tax">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Support">
 
-<h3>Tax Benefits</h3>
+<h3>Quick Claim Support</h3>
 
 <p>
-Save yearly tax with Section 80D medical insurance deductions.
+Hassle-free assistance whenever you need it.
 </p>
 
 </div>
 
 <div class="benefit-card">
 
-<img src="https://cdn-icons-png.flaticon.com/512/3004/3004458.png" alt="Critical">
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Affordable">
 
-<h3>Critical Illness</h3>
+<h3>Affordable Premium Plans</h3>
 
 <p>
-Get additional protection for major medical emergencies and surgeries.
+Protection that perfectly fits your budget and family needs.
 </p>
 
 </div>
@@ -861,18 +864,16 @@ Get additional protection for major medical emergencies and surgeries.
 
 </section>
 
-<!-- =========================
-CTA
-========================= -->
+<!-- CTA -->
 
 <section class="cta">
 
 <h2>
-Secure Your Family's Healthcare Future
+Get Comprehensive Healthcare Protection Today
 </h2>
 
 <p>
-Get insured today with smart health plans and instant support.
+Secure your health with affordable plans.
 </p>
 
 <a href="#quote-form" class="btn btn-primary">
@@ -881,9 +882,7 @@ Get Started
 
 </section>
 
-<!-- =========================
-FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -897,10 +896,6 @@ FOOTER
 <img src="policyfy-logo.png" alt="Footer Logo">
 
 </div>
-
-<p>
-Your reliable healthcare insurance partner for secure and stress-free living.
-</p>
 
 </div>
 
@@ -927,20 +922,16 @@ Your reliable healthcare insurance partner for secure and stress-free living.
 </div>
 
 <div class="bottom">
-© 2025 Policyfy. All Rights Reserved.
+© 2026 Policyfy. All Rights Reserved.
 </div>
 
 </footer>
 
-<!-- =========================
-JAVASCRIPT
-========================= -->
+<!-- JAVASCRIPT -->
 
 <script>
 
-/* =========================
-MOBILE MENU
-========================= */
+/* MOBILE MENU */
 
 function openMenu(){
 document.getElementById("mobileMenu").classList.add("active");
@@ -950,32 +941,11 @@ function closeMenu(){
 document.getElementById("mobileMenu").classList.remove("active");
 }
 
-/* =========================
-FAKE OTP FOR DEMO
-========================= */
-
-/*
-IMPORTANT:
-
-Google Ads landing page ke liye
-real OTP use karne ke liye:
-
-✔ Firebase Auth
-✔ MSG91
-✔ Twilio
-✔ Fast2SMS
-
-backend connect karna padega.
-
-Abhi demo OTP:
-1234
-*/
+/* DEMO OTP */
 
 let generatedOTP = "1234";
 
-/* =========================
-FORM SUBMIT
-========================= */
+/* FORM SUBMIT */
 
 const leadForm = document.getElementById("leadForm");
 
@@ -983,14 +953,9 @@ leadForm.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-/* FORM VALUES */
-
 const name = document.getElementById("name").value.trim();
 const phone = document.getElementById("phone").value.trim();
-const cover = document.getElementById("cover").value;
 const city = document.getElementById("city").value.trim();
-
-/* PHONE VALIDATION */
 
 if(phone.length !== 10 || isNaN(phone)){
 
@@ -1000,68 +965,23 @@ return;
 
 }
 
-/* LEAD OBJECT */
-
 const leadData = {
 name:name,
 phone:phone,
-cover:cover,
 city:city
 };
 
 console.log("Lead Submitted:", leadData);
 
-/* =========================
-YOUR API HERE
-========================= */
-
-/*
-
-fetch("YOUR_API_URL",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify(leadData)
-
-})
-
-.then(response => response.json())
-
-.then(data => {
-
-console.log(data);
-
-})
-
-.catch(error => {
-
-console.log(error);
-
-});
-
-*/
-
-/* SHOW LEAD SUCCESS */
-
 document.getElementById("leadStatus").style.display = "block";
 
-/* SHOW OTP BOX */
-
 document.getElementById("otpBox").style.display = "block";
-
-/* DEMO ALERT */
 
 alert("Lead Submitted Successfully! Demo OTP: 1234");
 
 });
 
-/* =========================
-VERIFY OTP
-========================= */
+/* VERIFY OTP */
 
 document.getElementById("verifyBtn").addEventListener("click", function(){
 
@@ -1087,9 +1007,7 @@ alert("Invalid OTP");
 
 });
 
-/* =========================
-NAVBAR SCROLL
-========================= */
+/* NAVBAR SCROLL */
 
 window.addEventListener("scroll", function(){
 
